@@ -1,18 +1,18 @@
 import React from "react";
 
-const NavItem = (props) => {
+const NavItem = ({ navItem, section, setSection }) => {
   const updateSection = (section) => {
-    props.setSection(section);
+    setSection(section);
   };
 
   return (
     <li>
       <a
-        className={props.navItem === props.section ? "active" : ""}
-        href={`#${props.navItem}`}
-        onClick={() => updateSection(props.navItem)}
+        className={navItem === section ? "active" : ""}
+        href={`#${navItem}`}
+        onClick={() => updateSection(navItem)}
       >
-        {props.navItem}
+        {navItem}
       </a>
     </li>
   );

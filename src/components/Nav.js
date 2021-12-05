@@ -1,7 +1,7 @@
 import React from "react";
 import NavItem from "./NavItem";
 
-const Nav = (props) => {
+const Nav = ({ navItems, setSection, section, navItem }) => {
   const svgStyles = {
     fill: "white",
   };
@@ -19,12 +19,12 @@ const Nav = (props) => {
           </a>
         </li>
 
-        {props.navItems.map((navItem, index) => (
+        {navItems.map((navItem, index) => (
           <NavItem
             key={index}
             navItem={navItem}
-            setSection={props.setSection}
-            section={props.section}
+            setSection={setSection}
+            section={section}
           />
         ))}
       </ul>
